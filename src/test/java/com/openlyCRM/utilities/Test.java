@@ -201,49 +201,31 @@ public class Test {
 
     @org.junit.Test
     public void test9() {
+
         loginPage.login();
 
         WebElement searchBox = Driver.getDriver().findElement(By.xpath("//input[@placeholder='Filter and search']"));
         searchBox.click();
 
-        //WebElement dateDropDown = Driver.getDriver().findElement(By.xpath("//span[@class='main-ui-select-name']"));
-
         WebElement dateDropDown = Driver.getDriver().findElement(By.xpath("//div[@data-name='DATE_CREATE_datesel']"));
 
-        Actions actions = new Actions(Driver.getDriver());
-
-        //WebElement yesterdayElement = Driver.getDriver().findElement(By.xpath("//span[.='Yesterday']"));
-
-
-        WebElement tagInput = Driver.getDriver().findElement(By.xpath("//input[@class='main-ui-control main-ui-control-string']"));
-        tagInput.sendKeys("58");
-
-         BrowserUtils.setAttribute(dateDropDown, "data-value", "{\"NAME\":\"Yesterday\",\"VALUE\":\"YESTERDAY\"}");
-
-        //System.out.println("Yesterday: "+yesterdayElement.getText());
-
-
-        //actions.moveToElement(dateDropDown).click().sendKeys(Keys.ARROW_DOWN + Keys.ARROW_DOWN + Keys.ENTER);
         BrowserUtils.sleep(1);
 
-        BrowserUtils.clickWithJS(dateDropDown);
-        BrowserUtils.sleep(1);
-        //dateDropDown.click();
-        actions.sendKeys(Keys.ARROW_DOWN).perform();
-        BrowserUtils.sleep(1);
+        dateDropDown.click();
 
-        actions.sendKeys(Keys.ARROW_DOWN).perform();
-        BrowserUtils.sleep(1);
+        /**
+         * When you click "Any date" the element that is below will be displayed !!
+         */
 
+        WebElement yesterdayElement = Driver.getDriver().findElement(By.xpath("//div[.='Yesterday']/div"));
 
-        actions.sendKeys(Keys.ENTER).perform();
-        BrowserUtils.sleep(3);
+        yesterdayElement.click();
 
+        WebElement selectedYesterday = Driver.getDriver().findElement(By.xpath("//span[@class='main-ui-select-name']"));
+        String actualDate = selectedYesterday.getText();
+        String expectedDate = yesterdayElement.getText();
 
-
-
-
-
+        Assert.assertEquals(expectedDate, actualDate);
     }
 
 
