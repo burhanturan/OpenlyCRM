@@ -55,7 +55,7 @@ public class ActiveStreamPage {
     @FindBy(xpath = "//a[contains(@id,'destDepartmentTab_mention')]")
     public WebElement mentionEmployeesAndDepartmentButton;
 
-    @FindBy(xpath = "(//div[@class='bx-finder-company-department-text'])[6]")
+    @FindBy(xpath = "(//div[@class='bx-finder-company-department-text'])[5]")
     public WebElement mentionHr3Department;
 
     @FindBy(xpath = "(//div[@class='bx-finder-company-department-employee-name'])[2]")
