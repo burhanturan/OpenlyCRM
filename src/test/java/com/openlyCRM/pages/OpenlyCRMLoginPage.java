@@ -22,7 +22,7 @@ public class OpenlyCRMLoginPage {
     private WebElement loginButton;
 
     public void login() {
-        Driver.getDriver().get(ConfigurationReader.getProperty("openlyCRM.url"));
+        Driver.getDriver().get(ConfigurationReader.getProperty("openlyCRM.url2"));
         this.username.sendKeys(ConfigurationReader.getProperty("openlyCRM.email3"));
         this.password.sendKeys(ConfigurationReader.getProperty("openlyCRM.password"));
         this.loginButton.click();

@@ -17,7 +17,7 @@ import org.junit.runner.RunWith;
         glue = "com/openlyCRM/step_definitions",
         dryRun = false,
         publish = true,
-        tags = "@OPC-1013"
+        tags = "@OPC-1015"
 
 )
 

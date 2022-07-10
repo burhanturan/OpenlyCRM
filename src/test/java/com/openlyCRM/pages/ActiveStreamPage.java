@@ -98,7 +98,7 @@ public class ActiveStreamPage {
     @FindBy(xpath = "//label[.='Video title:']")
     public WebElement insertVideoTitle;
 
-    @FindBy(xpath = "//iframe[contains(@src,'//player.vimeo.com/video/')]")
+    @FindBy(xpath = "//div/iframe[contains(@src,'//player.vimeo.com/video/')]")
     public WebElement insertVideoVerify;
 
     @FindBy(xpath = "//span[@class='bxhtmled-video-error']")
